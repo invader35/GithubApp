@@ -9,8 +9,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.jpardogo.android.googleprogressbar.library.FoldingCirclesDrawable;
 import com.quentindommerc.superlistview.SuperListview;
 
 import java.util.ArrayList;
@@ -29,6 +31,8 @@ public class MainActivity extends Activity {
     private SuperListview listView;
     private ArrayAdapter<String> adapter;
     private String selectedUser;
+    private ProgressBar mProgressBar;
+    private int ProgressId;
     public final static String EXTRA_MESSAGE = "at.schett.githubexample.githubapp.MESSAGE";
 
 
@@ -37,7 +41,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         listView = (SuperListview) findViewById(R.id.listView);
-        adapter = new ArrayAdapter<>(getApplicationContext(), R.layout.list_black_text,R.id.list_content);
+        adapter = new ArrayAdapter<>(getApplicationContext(), R.layout.list_black_text, R.id.list_content);
 
         ApiClient.getInstance().getApiClient().getUsers(new UserCallBack());
 
