@@ -31,4 +31,6 @@ dependencies {
     compile 'com.google.code.gson:gson:+'
     compile 'com.quentindommerc.superlistview:library:+'
     compile 'com.github.gabrielemariotti.cards:library:+'
+    compile 'com.jpardogo.googleprogressbar:library:+'
+
 }
